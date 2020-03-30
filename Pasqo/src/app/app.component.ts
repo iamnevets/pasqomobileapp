@@ -13,37 +13,42 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Home',
+      url: '/folder/Home',
+      icon: 'apps'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Timetable',
+      url: '/folder/Timetable',
+      icon: 'calendar'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Notifications',
+      url: '/folder/Notifications',
+      icon: 'notifications'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Achievements',
+      url: '/folder/Achievements',
+      icon: 'medal'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Flash Quiz',
+      url: '/folder/Quiz',
+      icon: 'game-controller'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Settings',
+      url: '/folder/Settings',
+      icon: 'settings'
+    },
+    {
+      title: 'Feedback',
+      url: '/folder/Help',
+      icon: 'help'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  // public labels = ['Dark Theme', 'Notifications', 'Notes', 'Work', 'Travel', 'Settings'];
 
   constructor(
     private platform: Platform,
