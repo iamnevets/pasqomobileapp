@@ -14,37 +14,37 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Home',
-      url: '/folder/Home',
+      url: '/folder/home/home',
       icon: 'apps'
     },
     {
       title: 'Timetable',
-      url: '/folder/Timetable',
+      url: '/folder/timetable/timetable',
       icon: 'calendar'
     },
     {
       title: 'Notifications',
-      url: '/folder/Notifications',
+      url: '/folder/notifications/notifications',
       icon: 'notifications'
     },
     {
       title: 'Achievements',
-      url: '/folder/Achievements',
+      url: '/folder/achievements/achievements',
       icon: 'medal'
     },
     {
       title: 'Flash Quiz',
-      url: '/folder/Quiz',
+      url: '/folder/flash-quiz/flash-quiz',
       icon: 'game-controller'
     },
     {
       title: 'Settings',
-      url: '/folder/Settings',
+      url: '/folder/settings/settings',
       icon: 'settings'
     },
     {
       title: 'Feedback',
-      url: '/folder/Help',
+      url: '/folder/feedback/feedback',
       icon: 'help'
     }
   ];
