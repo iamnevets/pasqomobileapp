@@ -1,0 +1,156 @@
+.main-exam-container {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px !important;
+}
+
+fa-icon {
+    cursor: pointer;
+}
+
+.exam-header-info {
+    height: 100px;
+    padding: 10px 50px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: #eefff2;
+    color: #575757;
+}
+
+.add-question {
+    float: right;
+    font-size: 2.5rem;
+    color: #9e4f8f;
+}
+
+.btn-save {
+    float: right;
+}
+
+.question-and-answers {
+    width: 95%;
+    margin: auto;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.question {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #575757;
+}
+
+.edit-question {
+    float: right;
+    color: #40844e;
+    font-size: 1.2rem;
+}
+.delete-question {
+    float: right;
+    color: #cc1a3b;
+    font-size: 1.2rem;
+}
+
+.answers-container {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+
+.answer {
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 70px;
+    background-color: #fff;
+    color: #7c7c7c;
+    border: 1px solid #cadbce;
+    border-radius: 3px;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+.answer:hover {
+    border: 1px solid #17b13b;
+    color: #5d5d5d;
+    transition: 0.3s ease-in-out;
+}
+
+.answer input {
+    margin-right: 10px;
+}
+
+.custom-radio-btn {
+    padding-left: 50px;
+    position: relative;
+}
+.custom-radio-btn input {
+    display: none;
+}
+.custom-radio-btn .circle {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: #a5a5a5 1px solid;
+    background-color: #fff;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    border-radius: 50%;
+}
+
+.custom-radio-btn input:checked + .circle::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #2ea84a;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.correct-answer {
+    height: 150px;
+    background-color: #fff;
+    color: #7c7c7c;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px;
+    border-radius: 5px;
+    transition: 2s ease-out;
+}
+
+.back-btn {
+    width: 130px;
+    height: 50px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #9e4f8f;
+    padding-left: 0;
+    margin-left: 5%;
+    margin-top: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+.back-btn:hover {
+    background-color: #7c3d70;
+    transition: 0.2s ease-out;
+}
+
+.timer-countdown {
+    float: right;
+    height: 70px;
+    width: 15%;
+    margin-right: 5%;
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: #E12F5C;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}

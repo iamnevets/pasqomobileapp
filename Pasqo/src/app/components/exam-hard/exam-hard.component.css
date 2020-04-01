@@ -1,0 +1,139 @@
+.main-content {
+  padding: 70px 5%;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 5%;
+}
+
+.table {
+  border: 3px solid transparent;
+}
+
+.exams-container {
+  position: relative;
+  height: 380px;
+  padding: 30px 40px;
+  margin-bottom: 80px;
+  color: #575757;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  /* border: 1px solid black; */
+}
+.exams-container .course-name {
+  font-weight: 700;
+}
+.exams-container .title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #979797;
+}
+.exams-container .progress-description {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.exams-container .btn-save {
+  width: 45% !important;
+  height: 70px;
+  letter-spacing: 4px;
+  font-size: 1.4rem !important;
+  background-color: #9e4f8f !important;
+}
+.exams-container .btn-save:hover {
+  background-color: #7a386e !important;
+}
+.exams-container .time-picker {
+  float: right;
+  width: 43%;
+  height: 70px;
+  margin-right: 10%;
+  padding: 10px;
+  padding-left: 40px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: #40844e;
+  color: white;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+}
+.exams-container .time-picker select {
+  width: 35%;
+  height: 55%;
+  margin-top: 4%;
+  margin-left: 10px;
+  color: white;
+  background-color: transparent;
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+  border-bottom: transparent;
+}
+.exams-container .time-picker select option {
+  background-color: #fff;
+  color: #575757;
+  text-align: center;
+}
+/* .exams-container .time-picker .timer-hour {
+  width: 40%;
+  height: 50%;
+  margin-top: 5%;
+} */
+
+.exams-container:hover {
+  background-color: #f1ffeb;
+  transition: 0.3s ease-in-out;
+}
+
+.hexagon {
+  position: absolute;
+  bottom: 65%;
+  left: 83%;
+  width: 140px;
+  height: 80.83px;
+  background-color: #e22b59f8;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 40.41px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 104px;
+  height: 104.5px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 17.5025px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.hexagon:before {
+  top: -49.4975px;
+}
+
+.hexagon:after {
+  bottom: -49.4975px;
+}
+
+/*cover up extra shadows*/
+.hexagon span {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 140px;
+  height: 80.829px;
+  z-index: 2;
+  background: inherit;
+
+  padding-top: 10px;
+  border-radius: 10px;
+}

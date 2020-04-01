@@ -1,0 +1,73 @@
+<div class="main-content">
+    <button class="btn back-btn shadow-sm" (click)="back()">
+        <fa-icon [icon]="faChevronLeft" [fixedWidth]="true"></fa-icon>BACK
+    </button>
+
+    <div class="main-form-container">
+
+        <div class="account-info-form-container">
+            <h3 class="header account-info-header">Account Information</h3>
+            <div class="form-container account-info-form">
+                <form [formGroup]="accountInfoForm" (ngSubmit)="updateAccount()">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control form-control-lg" id="name" formControlName="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control form-control-lg" id="username"
+                            formControlName="UserName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control form-control-lg" id="email" formControlName="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control form-control-lg" id="phone" formControlName="PhoneNumber">
+                    </div>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn btn-save">Save</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="change-password-form-container">
+            <h3 class="header change-password-header">Change Password</h3>
+            <div class="form-container change-password-form">
+                <form [formGroup]="changePasswordForm" (ngSubmit)="updatePassword()">
+                    <div class="form-group">
+                        <label for="old">Old Password</label>
+                        <input type="text" class="form-control form-control-lg" id="old" formControlName="OldPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="new">New Password</label>
+                        <input type="password" class="form-control form-control-lg" id="new"
+                            formControlName="NewPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm">Confirm Password</label>
+                        <input type="password" class="form-control form-control-lg" id="confirm"
+                            formControlName="ConfirmPassword">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn btn-save">Save</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

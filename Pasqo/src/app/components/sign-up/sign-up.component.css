@@ -1,0 +1,35 @@
+.main {
+    padding-top: 80px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.main-form-container {
+    overflow-y: auto;
+}
+
+.header {
+    padding: 20px 55px 50px 55px;
+    background-color: #9e4f8f;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group input {
+    font-weight: 500;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    padding-left: 0;
+}
+
+.btn-save {
+    width: 100%;
+    border-radius: 50px;
+    font-size: 1.5rem !important;
+    background-color: #9e4f8f !important;
+}
+.btn-save:hover {
+    background-color: #6e3764 !important;
+}

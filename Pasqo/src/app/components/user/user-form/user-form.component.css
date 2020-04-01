@@ -1,0 +1,19 @@
+.form-container {
+    /* display: grid; */
+    width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
+    background-color: white;
+    padding: 30px 60px 50px 40px;
+    border: 1px solid #e1e1e1;
+    border-top: 0px;
+}
+.form-container form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+.header {
+    width: 80%;
+}

@@ -1,0 +1,57 @@
+<div class="main-content">
+
+    <div class="main-form-container">
+
+        <h3 class="header shadow-sm">User Form</h3>
+        <div class="form-container shadow-lg">
+            <form [formGroup]="form" (ngSubmit)="createOrUpdateUser()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control form-control-lg" id="name" formControlName="Name">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control form-control-lg" id="username" formControlName="UserName">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control form-control-lg" id="email" formControlName="Email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control form-control-lg" id="phone" formControlName="PhoneNumber">
+                </div>
+                <div class="form-group">
+                    <label for="school">School</label>
+                    <select name="school" id="school" class="form-control form-control-lg" formControlName="SchoolId">
+                        <option [ngValue]="school?.Id" *ngFor="let school of schools">{{ school.Name }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select name="role" id="role" class="form-control form-control-lg" formControlName="UserRoleId">
+                        <option [ngValue]="role.Id" *ngFor="let role of roles">{{ role.Name }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control form-control-lg" id="password"
+                        formControlName="Password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input type="password" class="form-control form-control-lg" id="confirmpassword"
+                        formControlName="ConfirmPassword">
+                </div>
+                <br>
+                <div>
+                    <button (click)="cancel()" class="btn btn-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-save">Save</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+<div class="main-content">
+
+    <div class="messages-container">
+        <span class="message-details shadow-lg" *ngFor="let contact of contacts">
+            <span class="date">
+                {{contact.Date | date}}
+            </span>
+            <span class="delete-icon" (click)="delete(contact.Id)">
+                <fa-icon [icon]="faTrashAlt" [fixedWidth]="true"></fa-icon>
+            </span>
+            <br>
+            <br>
+            <h2 class="contact-name"> {{contact.Name}} </h2>
+            <br>
+            <p class="phone"> <b>Phone:</b> {{contact.Phone}} </p>
+            <!-- <br> -->
+            <p class="truncated-message"> <b>Message:</b> {{truncateMessage(contact.Id)}} </p>
+            <br>
+            <button class="btn btn-save" (click)="readMessage(contact.Id)">
+                READ
+            </button>
+        </span>
+    </div>
+
+</div>

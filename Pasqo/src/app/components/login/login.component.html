@@ -1,0 +1,42 @@
+<div class="body">
+
+    <div class="form-container shadow-lg">
+        <h3 class="header shadow-sm">Login</h3>
+        <form (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control form-control-lg" id="username" placeholder="Enter username"
+                    name="Username" #Username="ngModel" [(ngModel)]="user.Username">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control form-control-lg" id="password" placeholder="Password"
+                    name="Password" #Password="ngModel" [(ngModel)]="user.Password">
+            </div>
+            <br>
+            <div class="custom-control form-control-lg custom-checkbox">
+                <label class="final__toggle-1 remember-me" for="Check">
+                    <input type="checkbox" class="final__toggle-1__input" id="Check" name="RememberMe"
+                        #RememberMe="ngModel" [(ngModel)]="user.RememberMe">
+                    <span class="final__toggle-1__button"></span>
+                </label>
+                <span class="remember-me">Remember me</span>
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </div>
+    <br>
+
+    <div class="call-to-register">
+        <p>
+            Haven't registered yet?
+            <br>
+            <a (click)="signUp()">Create an account</a> <b> now </b>
+            and join the "shacks"!
+        </p>
+    </div>
+
+</div>

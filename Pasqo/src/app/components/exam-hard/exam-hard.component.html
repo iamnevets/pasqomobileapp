@@ -1,0 +1,62 @@
+<div class="main-content">
+
+    <table class="table">
+        <thead>
+            <th>
+                <input type="text" size="45" class="search-by" placeholder="Filter by title"
+                    [(ngModel)]="examFilter.Title">
+            </th>
+            <th>
+                <input type="text" size="50" class="search-by" placeholder="Filter by course"
+                    [(ngModel)]="examFilter.Course.Name">
+            </th>
+            <th>
+                <input type="text" size="37" class="search-by" placeholder="year-month" [(ngModel)]="examFilter.Year">
+            </th>
+        </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <span class="exams-container shadow-lg" *ngFor="let exam of exams | filterBy: examFilter">
+        <div class="hexagon">
+            <span>
+                <h5>BEST TIME</h5>
+                <p *ngIf="getBestTime(exam.Id) === ''">00 : 00 : 00</p>
+                <p *ngIf="getBestTime(exam.Id) !== ''"> {{getBestTime(exam.Id)}} </p>
+            </span>
+        </div>
+
+        <p class="title">
+            {{exam.Year | date}} - {{exam.Title}}
+        </p>
+        <br>
+        <h2 class="course-name"> {{exam.Course?.Name}} </h2>
+        <br>
+        <div class="progress" style="height: 10px; width: 90%;">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+        <p class="progress-description">Your best score after {{getNumberOfAttempts(exam.Id)}} attempts:
+            {{getBestScore(exam.Id)}}/{{getTotalNumberOfQuestions(exam.Id)}}</p>
+        <br>
+        <button class="btn btn-save" (click)="practice(exam.Id, 'start')">START</button>
+        <span class="time-picker">
+            <fa-icon [icon]="faClock" [fixedWidth]="true"></fa-icon>
+            <select class="timer-hour" (change)="onSelectHour($event.target.value)">
+                <option disabled>Hrs</option>
+                <option *ngFor="let hour of timerHour" value="{{hour}}">{{hour}}</option>
+            </select>
+            <select class="timer-minutes" (change)="onSelectMins($event.target.value)">
+                <option disabled>Mins</option>
+                <option *ngFor="let mins of timerMins" value="{{mins}}">{{mins}}</option>
+            </select>
+        </span>
+    </span>
+
+</div>

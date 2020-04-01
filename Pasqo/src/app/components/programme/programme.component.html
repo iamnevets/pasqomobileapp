@@ -1,0 +1,65 @@
+<div class="main-content">
+
+    <div class="main-table-container">
+
+        <div class="my-table-container shadow-sm">
+            <div>
+                <h3 class="table-title">PROGRAMMES</h3>
+                <span class="create-new shadow-sm" (click)="createProgramme()">Create New</span>
+            </div>
+            <br>
+            <br>
+            <table class="table">
+                <thead class="thead-light">
+                    <th></th>
+                    <th>
+                        <input type="text" size="40" class="search-by" placeholder="Filter by name"
+                            [(ngModel)]="programmeFilter.Name">
+                    </th>
+                    <th>
+                        <input type="text" size="50" class="search-by" placeholder="Filter by school"
+                            [(ngModel)]="programmeFilter.School.Name">
+                    </th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <thead class="my-thead">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" width="500px">Name</th>
+                        <th scope="col" width="500px">School</th>
+                        <th scope="col" style="text-align: center;">No. of Courses</th>
+                        <th scope="col" class="actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="let programme of programmes | filterBy: programmeFilter | paginate: {itemsPerPage: 10, currentPage: pageNumber} let i=index;">
+                        <th scope="row">{{ i+1 }}</th>
+                        <td>{{ programme.Name }}</td>
+                        <td>{{ programme.School?.Name }}</td>
+                        <td style="text-align: center;">{{ programme.NumberOfCourses }}</td>
+                        <td class="actions">
+                            <fa-icon [icon]="faEye" [fixedWidth]="true"></fa-icon>
+                            <fa-icon [icon]="faEdit" [fixedWidth]="true" class="mid-icon"
+                                (click)="updateProgramme(programme.Id)"></fa-icon>
+                            <fa-icon [icon]="faTrashAlt" [fixedWidth]="true" class="last-icon"
+                                (click)="delete(programme.Id)"></fa-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <pagination-controls class="pagination-controls" (pageChange)="pageNumber = $event" [autoHide]="true">
+            </pagination-controls>
+            <br>
+            <span class="empty-search" *ngIf="(programmes | filterBy:programmeFilter).length === 0">
+                No programme matches your search! <br> Did you type the right <b>name</b> or <b>School</b>???
+            </span>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,102 @@
+<div class="main-content">
+
+    <button class="btn back-btn shadow-sm" (click)="back()">
+        <fa-icon [icon]="faChevronLeft" [fixedWidth]="true"></fa-icon>BACK
+    </button>
+    <span class="timer-countdown" *ngIf="previousPage === 'examhard' && minsCountdown >= 10">
+        <fa-icon [icon]="faClock" [fixedWidth]="true"></fa-icon>
+        {{hourCountdown}} : {{minsCountdown}} : {{secondsCountdown}}
+    </span>
+    <span class="timer-countdown" *ngIf="previousPage === 'examhard' && minsCountdown < 10">
+        <fa-icon [icon]="faClock" [fixedWidth]="true"></fa-icon>
+        {{hourCountdown}} : 0{{minsCountdown}} : {{secondsCountdown}}
+    </span>
+
+    <div class="main-exam-container shadow-lg border-secondary mt-3 mb-5 pb-5">
+
+        <div class="exam-header-info">2019 Summer-break Exam
+            <span class="add-question" (click)="addQuestion()" *ngIf="isStudent === false">
+                <fa-icon [icon]="faPlusSquare" [fixedWidth]="true"></fa-icon>
+            </span>
+            <button type="submit" class="btn btn-save" (click)="submit()" *ngIf="previousPage !== 'exampractice'">
+                <fa-icon [icon]="faShareSquare" [fixedWidth]="true"></fa-icon>
+                Submit
+            </button>
+        </div>
+
+        <div class="question-and-answers mt-5 shadow-sm p-4" *ngFor="let question of questions; let i=index;">
+            <p class="question">{{i+1}}. {{question.QuestionText}}</p>
+            <fa-icon [icon]="faTrashAlt" [fixedWidth]="true" class="delete-question" (click)="delete(question.Id)"
+                *ngIf="isStudent === false">
+            </fa-icon>
+            <fa-icon [icon]="faEdit" [fixedWidth]="true" class="edit-question" (click)="updateQuestion(question.Id)"
+                *ngIf="isStudent === false">
+            </fa-icon>
+            <br>
+            <br>
+            <div class="answers-container">
+                <label class="answer custom-radio-btn">{{question.Answer1}}
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer1}}
+                        (click)="selectedAnswer(question.Id, question.Answer1)"
+                        *ngIf="isRetake === true || examState === 'start'">
+
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer1}}
+                        (click)="selectedAnswer(question.Id, question.Answer1)"
+                        [defaultChecked]="resumedAnswer(question.Id, question.Answer1)"
+                        *ngIf="isRetake === false && previousPage === 'exampractice' && examState !== 'start'">
+                    <span class="circle"></span>
+                </label>
+                <label class="answer custom-radio-btn">{{question.Answer2}}
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer2}}
+                        (click)="selectedAnswer(question.Id, question.Answer2)"
+                        *ngIf="isRetake === true || examState === 'start'">
+
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer2}}
+                        (click)="selectedAnswer(question.Id, question.Answer2)"
+                        [defaultChecked]="resumedAnswer(question.Id, question.Answer2)"
+                        *ngIf="isRetake === false && previousPage === 'exampractice' && examState !== 'start'">
+                    <span class="circle"></span>
+                </label>
+                <label class="answer custom-radio-btn">{{question.Answer3}}
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer3}}
+                        (click)="selectedAnswer(question.Id, question.Answer3)"
+                        *ngIf="isRetake === true || examState === 'start'">
+
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer3}}
+                        (click)="selectedAnswer(question.Id, question.Answer3)"
+                        [defaultChecked]="resumedAnswer(question.Id, question.Answer3)"
+                        *ngIf="isRetake === false && previousPage === 'exampractice' && examState !== 'start'">
+                    <span class="circle"></span>
+                </label>
+                <label class="answer custom-radio-btn">{{question.Answer4}}
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer4}}
+                        (click)="selectedAnswer(question.Id, question.Answer4)"
+                        *ngIf="isRetake === true || examState === 'start'">
+
+                    <input type="radio" name="Question{{i+1}}" value={{question.Answer4}}
+                        (click)="selectedAnswer(question.Id, question.Answer4)"
+                        [defaultChecked]="resumedAnswer(question.Id, question.Answer4)"
+                        *ngIf="isRetake === false && previousPage === 'exampractice' && examState !== 'start'">
+                    <span class="circle"></span>
+                </label>
+            </div>
+
+            <br *ngIf="previousPage === 'exampractice'">
+            <button class="btn btn-save" *ngIf="previousPage === 'exampractice'"
+            (click)="showAnswer(question.Id)">
+                Show answer
+            </button>
+            <br *ngIf="previousPage === 'exampractice'">
+            <br *ngIf="previousPage === 'exampractice'">
+            <p class="correct-answer shadow-lg" *ngIf="previousPage === 'exampractice' &&
+                (showCorrectAnswer && correctAnswerQuestionId === question.Id)">
+                <b>CORRECT ANSWER</b>
+                <br>
+                {{question.CorrectAnswer}}
+            </p>
+            <!-- <br *ngIf="previousPage === 'exampractice'"> -->
+        </div>
+
+    </div>
+
+</div>

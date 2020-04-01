@@ -1,0 +1,54 @@
+<div class="main-content">
+
+    <button class="btn back-btn shadow-sm" (click)="back()">
+        <fa-icon [icon]="faChevronLeft" [fixedWidth]="true"></fa-icon>
+        BACK
+    </button>
+    <br>
+    <br>
+
+    <div class="exam-record shadow-lg">
+        <h1 class="record-header">
+            <fa-icon [icon]="faFileAlt" [fixedWidth]="true"></fa-icon>
+            <br>
+            Exam Record
+        </h1>
+        <div class="main-record-details-container">
+            <div class="record-details-container">
+                <h4 class="record-detail-title">COURSE :</h4>
+                <p class="record-details">{{examRecord.Exam?.Course?.Name}}</p>
+            </div>
+            <br>
+            <div class="record-details-container">
+                <h4 class="record-detail-title">EXAM TITLE :</h4>
+                <p class="record-details">{{examRecord.Exam?.Title}}</p>
+            </div>
+            <br>
+            <div class="record-details-container">
+                <h4 class="record-detail-title">YEAR :</h4>
+                <p class="record-details">{{examRecord.Exam?.Year | date}}</p>
+            </div>
+            <br>
+            <div class="record-details-container">
+                <h4 class="record-detail-title">QUESTIONS ANSWERED :</h4>
+                <p class="record-details">{{examRecord.NumberOfQuestionsAnswered}}</p>
+            </div>
+            <br>
+            <div class="record-details-container">
+                <h4 class="record-detail-title">NO. OF QUESTIONS :</h4>
+                <p class="record-details">{{examRecord.TotalNumberOfQuestions}}</p>
+            </div>
+            <br>
+            <div class="record-details-container">
+                <h4 class="record-detail-title">SCORE :</h4>
+                <p class="record-details">{{examRecord.Score}}</p>
+            </div>
+            <br>
+            <div class="record-details-container">
+                <h4 class="record-detail-title">TIME TAKEN :</h4>
+                <p class="record-details">{{examRecord.TimeTaken}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

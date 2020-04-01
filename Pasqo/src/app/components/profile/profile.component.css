@@ -1,0 +1,75 @@
+.main-form-container {
+    overflow-y: visible;
+    margin-bottom: 10px;
+}
+
+form div input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+}
+form div label {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.account-info-form-container {
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: 45%;
+    margin-left: 5%;
+    padding: 0;
+}
+.change-password-form-container {
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: 45%;
+    padding: 0;
+}
+
+.account-info-form {
+    width: 100%;
+    /* margin-left: 4%; */
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+.account-info-header {
+    width: 100%;
+    padding-left: 60px;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.change-password-header {
+    width: 100%;
+    padding-left: 60px;
+    border-bottom: none;
+    background-color: #fff;
+}
+.change-password-form {
+    width: 100%;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.back-btn {
+    width: 130px;
+    height: 50px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #9e4f8f;
+    padding-left: 0;
+    margin-left: 8.5%;
+    margin-top: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+.back-btn:hover {
+    background-color: #7c3d70;
+    transition: 0.2s ease-out;
+}
