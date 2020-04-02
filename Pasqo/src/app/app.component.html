@@ -3,9 +3,14 @@
     <ion-menu contentId="main-content" type="overlay" mode="ios">
       <ion-content>
         <ion-list id="inbox-list">
-          <div  [routerLink]="['profile']" routerLinkActive="router-link-active" fill="clear">
-              <ion-list-header>User</ion-list-header>
-              <ion-note>user@gmail.com</ion-note>
+          <div  [routerLink]="['profile']" routerLinkActive="router-link-active" fill="clear" style="background: url(../assets/steve.jpg)no-repeat left; height: 250px; padding: 16px;">
+            <ion-avatar>
+              <img src="../assets/steve.jpg">
+            </ion-avatar>
+              <ion-list-header><h4 style="color: #fff;">User</h4></ion-list-header>
+              <ion-note style="color: #fff;">user@gmail.com</ion-note>
+              <br>
+              <ion-icon name="pencil" style="font-size:32px; color:#fff"></ion-icon>
           </div>
         
 
@@ -17,7 +22,10 @@
           </ion-menu-toggle>
         </ion-list>
         <ion-item lines="none">
-          <ion-toggle id="themeToggle" slot="end"></ion-toggle>
+          <div slot="end">
+            <ion-icon name="moon"></ion-icon>
+            <ion-toggle id="themeToggle"></ion-toggle>
+          </div>
         </ion-item>
       </ion-content>
     </ion-menu>
