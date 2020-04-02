@@ -9,6 +9,8 @@ export class FlashQuizPage implements OnInit {
 
   constructor() { }
 
+
+
   ngOnInit() {
   }
 

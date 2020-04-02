@@ -1,0 +1,20 @@
+.horizontal-container{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    // white-space: nowrap;
+    padding:0 100px;
+}
+
+ion-card{
+    // display: inline;
+    width: 250px;
+    height: 400px;
+    margin-right: 5px;
+}
+
+.horizontal-container {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }

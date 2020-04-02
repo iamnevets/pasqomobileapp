@@ -5,9 +5,24 @@ import { HomePage } from './home.page';
 
 const routes: Routes = [
   {
+    path: 'home',
+    component: HomePage,
+    children:[
+      {
+        path: 'tab1',
+        loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+      },
+      {
+        path: 'tab2',
+        loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
+      }
+    ],
+  },
+  {
     path: '',
-    component: HomePage
-  }
+    redirectTo:'home/tab1',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

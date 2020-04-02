@@ -6,7 +6,7 @@ import { FolderPage } from './folder.page';
 const routes: Routes = [
   {
     path: '',
-    component: FolderPage
+    component: FolderPage,
   },
   {
     path: 'home',
@@ -35,7 +35,8 @@ const routes: Routes = [
   {
     path: 'feedback',
     loadChildren: () => import('./feedback/feedback.module').then( m => m.FeedbackPageModule)
-  }
+  },
+
 
 ];
 
